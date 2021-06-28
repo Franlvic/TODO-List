@@ -8,14 +8,17 @@ import Grupo1 from './container/Grupo1'
 import Grupo2 from './container/Grupo2'
 import Grupo3 from './container/Grupo3'
 import Home from './container/Home'
+import ComponenteDePagina404 from './container/ComponenteDePagina404'
 ReactDOM.render(
 
   <Router history={hashHistory}>
-    <Route path='/' component={App}>
+    <Route path='/' exact component={App}>
       <IndexRoute component={Home} />
       <Route path='/grupo1' component={Grupo1} />
       <Route path='/grupo2' component={Grupo2} />
       <Route path='/grupo3' component={Grupo3} />
+      <Route path='*' component={ComponenteDePagina404} />
+
     </Route>
 
 

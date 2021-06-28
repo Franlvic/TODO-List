@@ -3,15 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import Grupo1 from './container/Grupo1'
+import Grupo2 from './container/Grupo2'
+import Grupo3 from './container/Grupo3'
+import Home from './container/Home'
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+  <Router history={hashHistory}>
+    <Route path='/' component={App}>
+      <IndexRoute component={Home} />
+      <Route path='/grupo1' component={Grupo1} />
+      <Route path='/grupo2' component={Grupo2} />
+      <Route path='/grupo3' component={Grupo3} />
+    </Route>
+
+
+
+  </Router>,
+  document.getElementById('root'));
+
+
 reportWebVitals();
